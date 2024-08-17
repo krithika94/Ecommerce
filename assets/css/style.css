@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+}
+
+.center {
+    text-align: center;
+}
+/* || VARIABLES */
+
+:root {
+    /* FONTS */
+    --FF:"Roboto", sans-serif;
+    --FF-HEADINGS: "Roboto", sans-serif;
+    --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+    /* COLORS */
+    --BODY-BGCOLOR: #f3f3f3;
+    --BORDER-COLOR: #d6c4c4;
+    --BUTTON-COLOR: #FFF;
+    --BUTTON-COLOR-HOVER: #2a55e5;
+    --FONT-COLOR: #000;
+    --HEADER-BGCOLOR: #FFF;
+    --HEADER-COLOR: #000;
+    --HERO-COLOR: #FFF;
+    --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+    --LINK-COLOR: #000;
+    --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+
+    /* BORDERS */
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+    --BORDER-RADIUS: 15px;
+    --SMALL-BORDER-RADIUS: 5px;
+
+}
+/* || GENERAL STYLES */
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--FS);
+    font-family: var(--FF);
+    background-color: var(--BGCOLOR);
+}
+
+body {
+    background-color: var(--BODY-BGCOLOR);
+    color: var(--FONT-COLOR);
+    min-height: 100vh;
+   
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--FF-HEADINGS);
+    letter-spacing: 0.1em;
+}
+
+h2,
+h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: var(--HIGHLIGHT-COLOR);
+}
+
+p {
+    line-height: 1.5;
+}
+
+a:any-link {
+    color: var(--LINK-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--LINK-HOVER);
+}
+
+a:active {
+    color: var(--LINK-ACTIVE);
+}
+/* || HEADER */
+section{
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    margin: auto;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin:1rem auto;
+}
+header,footer{
+    position: sticky;
+    background-color: var(--HEADER-BGCOLOR);
+    text-align: center;
+}
+header{
+    top:0;
+}
+ nav{
+    max-width: 1500px;
+    margin: auto;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-evenly;
+}
+.top__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    width: 100%;
+    min-height: 100px;
+}
+.top__header a{
+    display: flex;
+    text-decoration: none;
+}
+.top__header_product{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.2rem;
+}
+.top__header .seller{
+    display:none;
+ }
+.login {
+    padding: 0.5em;
+    border: none;
+    border-radius: var(--SMALL-BORDER-RADIUS);
+    background-color: var(--BUTTON-COLOR);
+    color: var(--FONT-COLOR);
+    font-weight: 400;
+}
+.login:hover{
+    border-radius: var(--SMALL-BORDER-RADIUS);
+    color:var(--HERO-COLOR);
+    background-color: var(--BUTTON-COLOR-HOVER);
+   
+}
+.form_control {
+    padding: 0.8rem;
+    width: 450px;
+    height: auto;
+}
+main {
+    max-width: 1500px;
+    margin: auto
+}
+footer{
+    width: 100%;
+    bottom: 0;
+}
+.footer .footer_links{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+.footer .footer_links a{
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+.footer p{
+    font-size: 0.7rem;
+    padding: 1rem;
+}
+/*CARDS */
+.card, .brands, .sports{
+    width: min(100%, 400px);
+    border-radius: var(--BORDER-RADIUS);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+.card figure{
+    display: flex;
+    flex-flow: column nowrap;
+    width: min(100%, 90px); 
+    gap:1rem;
+}
+.brands{
+    padding: 0rem;
+}
+.sports figure{
+    width:min(100%,150px);
+}
+.sports figure img{
+    min-height: 200px;
+}
+.card,.sports figcaption {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
+}
+ .sports_poster {
+    display: none;
+ }
+ .sports {
+    border:1px solid var(--BORDER-COLOR);
+ }
+/*BRANDS*/
+/*very small device*/
+@media (min-width: 0) { 
+    .search__product{
+        display: none;
+    }
+    section{
+        justify-content: center;
+        flex-flow: row wrap;
+        gap: 1rem;
+    }
+    .card{
+        flex-direction: row;
+    }
+    .card figure{
+        flex-flow: row nowrap;
+    }
+   
+    .card, .sports figcaption {
+        font-size: 1rem;
+      }
+    .sports{
+      width: min(100%, 225px);
+    }
+ }
+ /*small device*/
+@media screen and (min-width:576px){
+    
+    .search__product{
+        display: none;
+    }
+   
+    .card{
+        width: min(100%, 250px);
+    }
+    .brands{
+        width: min(100%, 170px);
+    }
+    .sports {
+        width: min(100%, 238px);
+    }
+    .card, .sports figcaption {
+        font-size: 1rem;
+      }
+
+   
+   }
+  /*MEDIUM DEVICE*/
+  @media screen and (min-width:768px){
+    .footer .footer_links{
+        flex-direction: row ;}
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+      }
+      
+     
+    .card{
+        width: min(100%, 325px);
+    }
+    .brands{
+        width: min(100%, 200px);
+    }
+    .sports {
+        width: min(100%, 150px);
+    }
+    .card, .sports figcaption {
+        font-size: 1rem;
+      }
+   }
+   /*TABLET DEVICE*/
+  @media screen and (min-width:992px){
+    .card,.sports {
+        width: min(100%, 400px);
+        min-height: 185px;
+      }
+      .sports {
+        border:1px solid var(--BORDER-COLOR);
+      }
+      .brands{
+        width: min(100%, 300px);
+      }
+     
+      .card, .sports figcaption {
+        font-size: 1rem;
+      }
+      .sports {
+        width: min(100%, 180px);
+    }
+      
+   }
+   /*LARGE DEVICE*/
+  @media screen and (min-width:1200px){
+    section {
+        flex-flow: row nowrap;
+    }
+
+    .card:nth-child(6) {
+        border:none;
+    }
+    .card{
+        border:1px solid var(--BORDER-COLOR);
+      }
+     .card,.search__product{
+        display: block;
+    }
+    .sports_poster{
+        display: block;
+    }
+    .top__header .seller{
+        display:block;
+     }
+     .card__poster figure{
+        width:35%;
+        margin: auto;
+     }
+     .card{
+        /* flex-direction: column; */
+        width: min(calc(33% - 1rem), 199px);
+        /* align-items: center; */
+
+     }
+     .card figure{
+        flex-direction: column;
+        justify-content: center;
+     }
+    
+     .brands{
+        width: min(calc(33% - 1rem), 500px);
+     }
+     .sports{
+        width: min(calc(33% - 1rem), 283px);
+     }
+     .nowrap {
+        overflow: hidden;
+      }
+    .footer .footer_links a{
+        font-size: 0.8rem;
+    }
+    .footer p{
+        font-size: 0.9rem;
+    }
+   }
+  
+   /*mobilescreen lanscape*/
+  @media screen and (max-height:425px) and (min-aspect-ratio:7/4){
+     
+     
+   }
